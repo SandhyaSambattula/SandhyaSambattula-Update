@@ -4,4 +4,4 @@ CREATE TABLE song (
 );
 INSERT INTO song (title, artist) VALUES
 ('Shape of you', 'Ed Sheeran');
-SELECT * FROM song WHERE LOWER(artist) = 'ed Sheeran';
+SELECT * FROM song WHERE LOWER(artist) = LOWER('ed Sheeran');
