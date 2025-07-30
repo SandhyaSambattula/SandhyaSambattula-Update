@@ -11,11 +11,11 @@ import java.sql.SQLException;
 public class ConnectionUtil {
     //TODO: figure
     //url will represent our connection string. Since this is an in-memory db, we will represent a file location to store the data
-    private static String url = "jdbc:h2:./h2/db";
+    private static String url = "jdbc:sqlite::memory:";
     private static String username = "sa";
     private static String password = "sa";
 
-    private static Connection connection = null;
+    private static Connection connection = "jdbc:sqlite.music.db";
 
     /**
      * @return active connection to the database
