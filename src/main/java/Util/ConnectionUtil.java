@@ -15,21 +15,15 @@ public class ConnectionUtil {
     private static String username = "sa";
     private static String password = "sa";
 
-    private static Connection connection = "jdbc:sqlite.music.db";
+    private class Util {
+        private static final String url = "jdbc:sqlite.music.db";
 
     /**
      * @return active connection to the database
      */
-    public static Connection getConnection(){
-        if(connection == null){
-            try {
-                connection = DriverManager.getConnection(url, username, password);
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return connection;
+    public static Connection getConnection() throws SQLException {
+        return
+        DriverManager.getConnection (url);
     }
-
+}
 }
