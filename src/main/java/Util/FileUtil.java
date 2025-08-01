@@ -9,20 +9,22 @@ public class FileUtil {
 
         StringBuilder sql = new StringBuilder();
         try {
-            //the file to be opened for reading
+            // Open file for reading
             FileInputStream fis = new FileInputStream("./" + fileName);
-
-            //file to be scanned
             Scanner sc = new Scanner(fis);
 
-            //returns true if there is another line to read
+            // Read file line by line
             while (sc.hasNextLine()) {
-                sql.append(sc.nextLine() + " ");
+                sql.append(sc.nextLine()).append(" ");
             }
-            sc.close();     //closes the scanner
+
+            sc.close();
+            fis.close(); // optional, but good practice
         } catch (IOException e) {
+            System.out.println("Error reading file: " + fileName);
+            e.printStackTrace();
         }
 
-        return sql.toString();
+        return sql.toString().trim();
     }
 }

@@ -44,5 +44,9 @@ public class UpdateARecord {
         } catch (SQLException e) {
             System.out.println("problem1: " + e.getMessage() + '\n');
         }
+         public static void main(String[] args) {
+        UpdateARecord obj = new UpdateARecord();
+        obj.problem1(); // ✅ call the method
     }
 }
+    }
